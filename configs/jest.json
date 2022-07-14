@@ -1,0 +1,18 @@
+{
+  "rootDir": "..",
+  "testEnvironment": "jsdom",
+  "coverageDirectory": "<rootDir>/tests/__coverage__/",
+  "roots": ["<rootDir>/src/", "<rootDir>/tests/"],
+  "moduleNameMapper": {
+    "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/tests/mocks/files/*.js",
+    "\\.(css|scss|less)$": "<rootDir>/tests/mocks/styles/*.js"
+  },
+  "moduleFileExtensions": ["ts", "tsx", "js", "jsx"],
+  "transformIgnorePatterns": ["/node_modules/"],
+  "testRegex": "/tests/.*\\.(ts|tsx)$",
+  "moduleDirectories": ["node_modules", "src"],
+  "globals": {
+    "DEVELOPMENT": false,
+    "FAKE_SERVER": false
+  }
+}
