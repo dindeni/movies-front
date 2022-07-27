@@ -16,11 +16,11 @@
     "sourceType": "module",
     "project": ["./tsconfig.json"]
   },
-  "plugins": ["@typescript-eslint", "react", "prettier", "import"],
+  "plugins": ["@typescript-eslint", "react", "prettier", "import", "jest-dom"],
   "settings": {
     "import/resolver": {
       "node": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+        "extensions": [".js", ".jsx", ".ts", ".tsx", ".css"]
       }
     },
     "import/parsers": {
@@ -80,7 +80,7 @@
     "import/no-extraneous-dependencies": [
       "error",
       {
-        "devDependencies": false,
+        "devDependencies": ["**/*.test.ts", "**/*.test.tsx"],
         "optionalDependencies": true,
         "peerDependencies": true
       }
@@ -102,6 +102,10 @@
         "newlines-between": "always",
         "alphabetize": { "order": "asc", "caseInsensitive": true }
       }
-    ]
+    ],
+    "jest-dom/prefer-checked": "error",
+    "jest-dom/prefer-enabled-disabled": "error",
+    "jest-dom/prefer-required": "error",
+    "jest-dom/prefer-to-have-attribute": "error"
   }
 }

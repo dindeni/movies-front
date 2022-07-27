@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
+import fonts from './fonts/fonts.module.css';
+
 const GlobalStyle = createGlobalStyle`
   html,
   body {
@@ -9,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   html {
+    font-family: DmSans, Arial, sans-serif;
     font-size: 16px;
   }
 
@@ -21,6 +24,7 @@ const GlobalStyle = createGlobalStyle`
   *::before {
     box-sizing: border-box;
   }
+  ${fonts};
 `;
 
 export { GlobalStyle };

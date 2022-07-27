@@ -1,9 +1,10 @@
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { App } from 'core/App';
 
 describe('App', () => {
   test('should render', () => {
-    render(<App />);
-    expect(screen.getByText('Hello World!')).toBeTruthy();
+    const { container } = render(<App />);
+    const app = container.getElementsByClassName('app');
+    expect(app.length).toBe(1);
   });
 });
