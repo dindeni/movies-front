@@ -98,9 +98,18 @@
     "import/order": [
       "warn",
       {
-        "groups": [["builtin", "external"], ["internal"], ["parent", "sibling", "index"]],
+        "groups": [["builtin", "external"], "internal", ["parent", "sibling", "index"]],
         "newlines-between": "always",
-        "alphabetize": { "order": "asc", "caseInsensitive": true }
+        "alphabetize": { "order": "asc", "caseInsensitive": true },
+        "pathGroups": [
+          { "pattern": "core/**", "group": "internal" },
+          { "pattern": "pages/**", "group": "internal" },
+          { "pattern": "services/**", "group": "internal" },
+          { "pattern": "shared/**", "group": "internal" },
+          { "pattern": "styles/**", "group": "internal" },
+          { "pattern": "features/**", "group": "internal" }
+        ],
+        "pathGroupsExcludedImportTypes": []
       }
     ],
     "jest-dom/prefer-checked": "error",

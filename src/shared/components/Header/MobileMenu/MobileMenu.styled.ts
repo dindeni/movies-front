@@ -9,6 +9,7 @@ const MobileMenuWrapper = styled.div<{ isOpen: boolean }>`
   height: 100%;
   background: ${({ theme: { colors } }) => colors.secondaryGray};
   padding: 15px;
+  z-index: 10;
 
   @media (min-width: 450px) {
     display: none;

@@ -1,8 +1,10 @@
 import { render, screen } from '@testing-library/react';
-import { NotFound } from 'pages/NotFound';
 import { MemoryRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
+
+import { NotFound } from 'pages/NotFound';
 import { theme } from 'styles/theme';
+
 import '@testing-library/jest-dom/extend-expect';
 
 describe('NotFound', () => {

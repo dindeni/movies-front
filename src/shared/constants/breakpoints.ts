@@ -1,0 +1,3 @@
+const MOBILE_BREAKPOINT = 450;
+
+export { MOBILE_BREAKPOINT };

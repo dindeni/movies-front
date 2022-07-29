@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import { Helmet } from 'react-helmet';
+
 import { Header } from 'shared/components/Header';
 
 import { StyledWrapper, StyledMain } from './BaseLayout.styled';

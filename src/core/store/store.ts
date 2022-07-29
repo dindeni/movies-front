@@ -1,14 +1,25 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore, PreloadedState, combineReducers } from '@reduxjs/toolkit';
 import { useDispatch, useSelector, TypedUseSelectorHook } from 'react-redux';
 
-const store = configureStore({
-  reducer: {},
+import { trendingReducer } from '../reduxSlices/trending/reducer';
+
+const rootReducer = combineReducers({
+  trending: trendingReducer,
 });
 
-type AppDispatch = typeof store.dispatch;
-type RootState = ReturnType<typeof store.getState>;
+const setupStore = (preloadedState?: PreloadedState<RootState>) => {
+  return configureStore({
+    reducer: rootReducer,
+    preloadedState,
+  });
+};
+
+type RootState = ReturnType<typeof rootReducer>;
+type AppStore = ReturnType<typeof setupStore>;
+type AppDispatch = AppStore['dispatch'];
+
 const useAppDispatch: () => AppDispatch = useDispatch;
 const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 
-export { store, useAppDispatch, useAppSelector };
-export type { AppDispatch, RootState };
+export { setupStore, useAppDispatch, useAppSelector };
+export type { AppDispatch, RootState, AppStore };

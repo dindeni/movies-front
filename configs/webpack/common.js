@@ -1,16 +1,19 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { ProvidePlugin } = require('webpack');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: './core/index.tsx',
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
-    alias: {  // aliases
+    alias: {
+      // aliases
       core: path.resolve(__dirname, '../../src/core'),
       features: path.resolve(__dirname, '../../src/features'),
       shared: path.resolve(__dirname, '../../src/shared'),
       styles: path.resolve(__dirname, '../../src/styles'),
+      services: path.resolve(__dirname, '../../src/services'),
     },
   },
   context: path.resolve(__dirname, '../../src'),
@@ -42,6 +45,9 @@ module.exports = {
     new HtmlWebpackPlugin({ template: 'core/index.html' }),
     new ProvidePlugin({
       React: 'react',
+    }),
+    new Dotenv({
+      systemvars: true,
     }),
   ],
 };
