@@ -1,8 +1,18 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
+const ImageWrapper = styled.div`
+  padding-top: 150%;
+  position: relative;
+  background: ${({ theme: { colors } }) => `${colors.gold}33`};
+`;
+
 const StyledImage = styled.img`
   width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
 `;
 
 const StyledLink = styled(Link)`
@@ -34,4 +44,4 @@ const StyledNumber = styled.div`
   }
 `;
 
-export { StyledImage, StyledLink, StyledNumber };
+export { ImageWrapper, StyledImage, StyledLink, StyledNumber };

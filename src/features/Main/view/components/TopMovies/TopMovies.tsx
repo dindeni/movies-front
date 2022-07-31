@@ -7,19 +7,19 @@ import {
   HeaderWrapper,
   StyledHeader,
   StyledLink,
-} from './DailyTop.styled';
+} from './TopMovies.styled';
 import { Props } from './types';
 
-const DailyTop: FC<Props> = ({ slides, preventOnLoadImage }) => {
+const TopMovies: FC<Props> = ({ slidesKind, slides, preventOnLoadImage }) => {
   return (
     <StyledSection>
       <HeaderWrapper>
-        <StyledHeader>Daily top</StyledHeader>
-        <StyledLink to="/trending/daily">see more</StyledLink>
+        <StyledHeader>{slidesKind === 'daily' ? 'Daily' : 'Weekly'} top</StyledHeader>
+        <StyledLink to={`/trending/${slidesKind}`}>see more</StyledLink>
       </HeaderWrapper>
       <Slider slides={slides} preventOnLoadImage={preventOnLoadImage} />
     </StyledSection>
   );
 };
 
-export { DailyTop };
+export { TopMovies };

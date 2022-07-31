@@ -1,6 +1,17 @@
 import { Status, TrendingItem } from 'shared/types/redux';
 
-export interface State {
-  status: Status;
-  data: TrendingItem;
+interface State {
+  dailyStatus: Status;
+  dailyData: TrendingItem;
+  weeklyStatus: Status;
+  weeklyData: TrendingItem;
 }
+
+interface Meta {
+  arg: {
+    page: number;
+    timePeriod: 'day' | 'week';
+  };
+}
+
+export type { State, Meta };

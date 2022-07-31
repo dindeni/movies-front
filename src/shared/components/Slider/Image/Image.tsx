@@ -1,9 +1,15 @@
 import { FC, useState } from 'react';
 
 import { ImageProps } from '../types';
-import { StyledImage, StyledLink, StyledNumber } from './Image.styled';
+import { ImageWrapper, StyledImage, StyledLink, StyledNumber } from './Image.styled';
 
-const Image: FC<ImageProps> = ({ link, imagePath, imageAlt, slideNumber, preventOnLoadImage }) => {
+const Image: FC<ImageProps> = ({
+  link,
+  imagePath,
+  imageAlt,
+  slideNumber,
+  preventOnLoadImage,
+}) => {
   const [isRendered, setIsRendered] = useState(false);
 
   const handleStyledImageRendered = () => {
@@ -11,8 +17,10 @@ const Image: FC<ImageProps> = ({ link, imagePath, imageAlt, slideNumber, prevent
   };
 
   return (
-    <StyledLink to={link}>
-      <StyledImage src={imagePath} alt={imageAlt} onLoad={handleStyledImageRendered} />
+    <StyledLink to={link || ''}>
+      <ImageWrapper>
+        <StyledImage src={imagePath} alt={imageAlt} onLoad={handleStyledImageRendered} />
+      </ImageWrapper>
       {(isRendered || preventOnLoadImage) && <StyledNumber>{slideNumber}</StyledNumber>}
     </StyledLink>
   );

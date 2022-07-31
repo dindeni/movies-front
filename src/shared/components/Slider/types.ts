@@ -1,7 +1,7 @@
 interface Slide {
   id: number;
-  imagePath: string;
   imageAlt: string;
+  imagePath: string;
   link: string;
 }
 

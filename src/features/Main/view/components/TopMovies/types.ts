@@ -6,6 +6,7 @@ interface Slide {
 }
 
 interface Props {
+  slidesKind: 'daily' | 'weekly';
   slides: Slide[];
   preventOnLoadImage?: boolean;
 }

@@ -1,9 +1,13 @@
 import { render, fireEvent } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import { Header } from 'shared/components/Header';
 import { ThemeProvider } from 'styled-components';
+
+import { Header } from 'shared/components/Header';
 import { theme } from 'styles/theme';
+
+import { changeViewport } from './utils/viewport';
 import '@testing-library/jest-dom/extend-expect';
+
 
 describe('Header', () => {
   let getByText;
@@ -37,12 +41,7 @@ describe('Header', () => {
   });
 
   it('should when the button is clicked the menu opens', () => {
-    Object.defineProperty(window, 'innerWidth', {
-      writable: true,
-      configurable: true,
-      value: 425,
-    });
-    window.dispatchEvent(new Event('resize'));
+    changeViewport(425);
     const buttonElement = container.querySelector('[aria-label=close]');
     fireEvent.click(buttonElement);
     expect(container.querySelector('[aria-label=open]')).toBeTruthy();

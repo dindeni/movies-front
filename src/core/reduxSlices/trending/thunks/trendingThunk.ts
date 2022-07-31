@@ -1,5 +1,6 @@
 import { AsyncThunkPayloadCreator, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+
 import { API } from 'services/api/common/API';
 
 const getTrendingResult: AsyncThunkPayloadCreator<
@@ -18,6 +19,6 @@ const getTrendingResult: AsyncThunkPayloadCreator<
   }
 };
 
-const getTrending = createAsyncThunk('/getTrending', getTrendingResult);
+const getDailyTrending = createAsyncThunk('/getDailyTrending', getTrendingResult);
 
-export { getTrending };
+export { getDailyTrending };
