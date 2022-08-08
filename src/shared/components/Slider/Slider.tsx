@@ -3,14 +3,14 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.min.css';
 import 'swiper/swiper.min.css';
 
-import { Image } from './Image';
+import { ImageLink } from './ImageLink';
 import { StyledWrapper } from './Slider.styled';
 import { Props } from './types';
 
 const Slider: FC<Props> = ({ slides = [], preventOnLoadImage }) => {
   const slidesElements = slides.map(({ imagePath, imageAlt, id, link }, index) => (
     <SwiperSlide key={id}>
-      <Image
+      <ImageLink
         id={id}
         imagePath={imagePath}
         imageAlt={imageAlt}

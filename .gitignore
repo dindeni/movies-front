@@ -5,4 +5,5 @@ src/**/*.jsx
 tests/__coverage__/
 tests/**/*.jsx
 .vercel
+vercel.json
 .env

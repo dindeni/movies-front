@@ -1,4 +1,5 @@
 import { FC } from 'react';
+
 import { BaseLayout } from 'shared/layouts/BaseLayout';
 
 import { StyledArticle, StyledHeader, StyledLink } from './NotFound.styled';

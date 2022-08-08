@@ -11,7 +11,7 @@ const StyledMain = styled.main`
   width: 70%;
   margin: 0 auto;
 
-  @media (max-width: 450px) {
+  @media (max-width: 900px) {
     width: 90%;
   }
 `;

@@ -8,7 +8,6 @@ import { theme } from 'styles/theme';
 import { changeViewport } from './utils/viewport';
 import '@testing-library/jest-dom/extend-expect';
 
-
 describe('Header', () => {
   let getByText;
   let container;

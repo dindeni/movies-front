@@ -107,7 +107,8 @@
           { "pattern": "services/**", "group": "internal" },
           { "pattern": "shared/**", "group": "internal" },
           { "pattern": "styles/**", "group": "internal" },
-          { "pattern": "features/**", "group": "internal" }
+          { "pattern": "features/**", "group": "internal" },
+          { "pattern": "static/**", "group": "internal" }
         ],
         "pathGroupsExcludedImportTypes": []
       }

@@ -5,6 +5,9 @@ const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: './core/index.tsx',
+  output: {
+    publicPath: '/'
+  },
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
     alias: {
@@ -14,6 +17,7 @@ module.exports = {
       shared: path.resolve(__dirname, '../../src/shared'),
       styles: path.resolve(__dirname, '../../src/styles'),
       services: path.resolve(__dirname, '../../src/services'),
+      static: path.resolve(__dirname, '../../src/static'),
     },
   },
   context: path.resolve(__dirname, '../../src'),

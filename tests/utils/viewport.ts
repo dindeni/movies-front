@@ -1,3 +1,5 @@
+import { act } from 'react-dom/test-utils';
+
 const changeViewport = (width: number) => {
   Object.defineProperty(window, 'innerWidth', {
     writable: true,
@@ -7,4 +9,11 @@ const changeViewport = (width: number) => {
   window.dispatchEvent(new Event('resize'));
 };
 
-export { changeViewport };
+const dispatchResize = async () => {
+  await act(async () => {
+    window.dispatchEvent(new Event('resize'));
+    await new Promise((r) => setTimeout(r, 300));
+  });
+};
+
+export { changeViewport, dispatchResize };

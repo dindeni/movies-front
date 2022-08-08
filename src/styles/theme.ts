@@ -10,6 +10,7 @@ const theme = {
     lightGray: '#edf8f4',
     text: '#2e2e2e',
     gold: '#fed530',
+    gradientBlack: 'linear-gradient(180deg, #00000000 0%, #000000 100%)',
   },
 };
 

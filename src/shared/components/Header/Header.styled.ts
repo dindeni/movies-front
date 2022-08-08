@@ -8,7 +8,7 @@ const StyledHeader = styled.header`
   display: flex;
   align-items: center;
 
-  @media (max-width: 450px) {
+  @media (max-width: 900px) {
     width: 90%;
   }
 `;

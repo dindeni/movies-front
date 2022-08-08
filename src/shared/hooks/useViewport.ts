@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
-import { debounce } from '../helpers/debounce';
 import { MOBILE_BREAKPOINT } from '../constants/breakpoints';
+import { debounce } from '../helpers/debounce';
 
 const useViewport = () => {
   const [width, setWidth] = useState(0);

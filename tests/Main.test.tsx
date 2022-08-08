@@ -9,9 +9,9 @@ import '@testing-library/jest-dom/extend-expect';
 import { Main } from 'features/Main/view/containers/Main';
 import { theme } from 'styles/theme';
 
-import { dailyTopSlides } from '../__mocks__/mockData';
-import { renderWithProviders } from '../utils/redux';
-import { changeViewport } from '../utils/viewport';
+import { dailyTopSlides } from './__mocks__/mockData';
+import { renderWithProviders } from './utils/redux';
+import { changeViewport } from './utils/viewport';
 
 const successHandler = [
   rest.get(`https://api.themoviedb.org/3/trending/movie/day`, (req, res, ctx) => {

@@ -74,4 +74,119 @@ const dailyTopSlides = {
   total_results: 10,
 };
 
-export { dailyTopSlides };
+const movieDescription = {
+  adult: false,
+  backdrop_path: '/nW5fUbldp1DYf2uQ3zJTUdachOu.jpg',
+  belongs_to_collection: null,
+  budget: 200000000,
+  genres: [
+    {
+      id: 16,
+      name: 'Animation',
+    },
+    {
+      id: 878,
+      name: 'Science Fiction',
+    },
+    {
+      id: 12,
+      name: 'Adventure',
+    },
+    {
+      id: 28,
+      name: 'Action',
+    },
+    {
+      id: 10751,
+      name: 'Family',
+    },
+  ],
+  homepage: 'https://movies.disney.com/lightyear',
+  id: 718789,
+  imdb_id: 'tt10298810',
+  original_language: 'en',
+  original_title: 'Lightyear',
+  overview: `Legendary Space Ranger Buzz Lightyear embarks on an intergalactic adventure alongside a group of ambitious recruits
+     and his robot companion Sox.`,
+  popularity: 3273.092,
+  poster_path: '/ox4goZd956BxqJH6iLwhWPL9ct4.jpg',
+  production_companies: [
+    {
+      id: 2,
+      logo_path: '/wdrCwmRnLFJhEoH8GSfymY85KHT.png',
+      name: 'Walt Disney Pictures',
+      origin_country: 'US',
+    },
+    {
+      id: 3,
+      name: 'Pixar',
+      origin_country: 'US',
+    },
+  ],
+  production_countries: [
+    {
+      iso_3166_1: 'US',
+      name: 'United States of America',
+    },
+  ],
+  release_date: '2022-06-15',
+  revenue: 222400000,
+  runtime: 107,
+  spoken_languages: [
+    {
+      english_name: 'English',
+      iso_639_1: 'en',
+      name: 'English',
+    },
+  ],
+  status: 'Released',
+  tagline: 'Infinity awaits.',
+  title: 'Lightyear',
+  video: false,
+  vote_average: 7.362,
+  vote_count: 1262,
+};
+
+const trailers = {
+  id: 123,
+  results: [
+    {
+      iso_639_1: 'en',
+      iso_3166_1: 'US',
+      name: 'Official Trailer 2',
+      key: 'wHBBoUtJHhA',
+      site: 'YouTube',
+      size: 1080,
+      type: 'Trailer',
+      official: true,
+      published_at: '2022-04-21T14:00:52.000Z',
+      id: '62616cd2d4cc8e00a56d4a0a',
+    },
+    {
+      iso_639_1: 'en',
+      iso_3166_1: 'US',
+      name: 'Official Trailer',
+      key: 'BwZs3H_UN3k',
+      site: 'YouTube',
+      size: 1080,
+      type: 'Trailer',
+      official: true,
+      published_at: '2022-02-08T15:00:30.000Z',
+      id: '62029ad3e004a600b847dd2d',
+    },
+    {
+      iso_639_1: 'en',
+      iso_3166_1: 'US',
+      name: 'Teaser Trailer',
+      key: 'BwPL0Md_QFQ',
+      site: 'YouTube',
+      size: 1080,
+      type: 'Trailer',
+      official: true,
+      published_at: '2021-10-27T12:46:06.000Z',
+      id: '6179510af85958002a4b559b',
+    },
+  ],
+};
+
+export { dailyTopSlides, movieDescription, trailers };

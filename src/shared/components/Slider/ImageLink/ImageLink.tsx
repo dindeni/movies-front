@@ -1,9 +1,11 @@
 import { FC, useState } from 'react';
 
-import { ImageProps } from '../types';
-import { ImageWrapper, StyledImage, StyledLink, StyledNumber } from './Image.styled';
+import { Image } from 'shared/components/Image/Image';
 
-const Image: FC<ImageProps> = ({
+import { ImageProps } from '../types';
+import { StyledLink, StyledNumber } from './ImageLink.styled';
+
+const ImageLink: FC<ImageProps> = ({
   link,
   imagePath,
   imageAlt,
@@ -18,12 +20,10 @@ const Image: FC<ImageProps> = ({
 
   return (
     <StyledLink to={link || ''}>
-      <ImageWrapper>
-        <StyledImage src={imagePath} alt={imageAlt} onLoad={handleStyledImageRendered} />
-      </ImageWrapper>
+      <Image src={imagePath} alt={imageAlt} onLoad={handleStyledImageRendered} />
       {(isRendered || preventOnLoadImage) && <StyledNumber>{slideNumber}</StyledNumber>}
     </StyledLink>
   );
 };
 
-export { Image };
+export { ImageLink };
