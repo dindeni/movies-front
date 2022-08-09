@@ -1,9 +1,5 @@
 import styled from 'styled-components';
 
-const StyledWrapper = styled.div`
-  & .swiper-wrapper {
-    column-gap: 20px;
-  }
-`;
+const StyledWrapper = styled.div``;
 
 export { StyledWrapper };

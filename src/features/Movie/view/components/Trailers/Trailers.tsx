@@ -43,7 +43,7 @@ const Trailers: FC<Props> = ({ trailers, isTablet }) => {
 
   const slidesPerView =
     videoSlides.length < initialSlidesPerView ? videoSlides.length : initialSlidesPerView;
-  const [currentSlide, setCurrentSlide] = useState(slidesPerView);
+  const [currentSlide, setCurrentSlide] = useState(slidesPerView - 1);
 
   const handleButtonNextClick = () => {
     swiper?.slideNext();
@@ -54,8 +54,9 @@ const Trailers: FC<Props> = ({ trailers, isTablet }) => {
   };
 
   const handleSlideChange = (event: SwiperCore) => {
-    setCurrentSlide(event.activeIndex + slidesPerView);
+    setCurrentSlide(event.activeIndex);
   };
+  console.log(currentSlide, videoSlides.length, swiper);
 
   return (
     <>
@@ -72,7 +73,7 @@ const Trailers: FC<Props> = ({ trailers, isTablet }) => {
               onClick={handleButtonPrevClick}
               isPrev
               aria-label="previous"
-              disabled={currentSlide <= slidesPerView}
+              disabled={currentSlide === 0}
             />
             <Swiper
               slidesPerView={slidesPerView}
@@ -84,7 +85,7 @@ const Trailers: FC<Props> = ({ trailers, isTablet }) => {
             <ButtonControl
               onClick={handleButtonNextClick}
               aria-label="next"
-              disabled={currentSlide + 1 > videoSlides.length}
+              disabled={currentSlide + slidesPerView >= videoSlides.length}
             />
           </SlideWrapper>
         )}
