@@ -13,18 +13,6 @@ const StyledHeader = styled.header`
   }
 `;
 
-const LogoText = styled.h1`
-  margin: 0;
-  font-size: 32px;
-  line-height: 48px;
-  font-weight: 700;
-  color: ${({ theme: { colors } }) => colors.white};
-`;
-
-const LogoLink = styled(Link)`
-  text-decoration: none;
-`;
-
 const StyledNav = styled.nav`
   margin-left: 50px;
 `;
@@ -107,8 +95,6 @@ const StyledItem = styled.li`
 
 export {
   StyledHeader,
-  LogoText,
-  LogoLink,
   StyledNav,
   StyledList,
   StyledItem,

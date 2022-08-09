@@ -7,6 +7,7 @@ import { Props } from './types';
 const initialAnimation = {
   width: 0,
   opacity: 0,
+  duration: 0.5,
 };
 
 const MobileMenu: FC<Props> = ({ isOpen, children }) => {
@@ -22,9 +23,12 @@ const MobileMenu: FC<Props> = ({ isOpen, children }) => {
         width: '80%',
         opacity: 1,
         duration: 0.5,
+        visibility: 'visible',
       });
     } else {
-      gsap.to(wrapperRef.current, initialAnimation);
+      const timeline = gsap.timeline();
+      timeline.to(wrapperRef.current, initialAnimation);
+      timeline.to(wrapperRef.current, { visibility: 'hidden' });
     }
   }, [isOpen]);
 

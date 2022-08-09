@@ -1,19 +1,26 @@
 import styled from 'styled-components';
 
-const StyledWrapper = styled.div`
+const StyledWrapper = styled.div<{ height: number }>`
   background: ${({ theme: { colors } }) => colors.black};
   height: 100%;
-  min-height: 100vh;
+  min-height: ${({ height }) => (height ? `${height}px` : '100vh')};
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 `;
 
 const StyledMain = styled.main`
-  min-height: calc(100vh - 100px);
   width: 70%;
   margin: 0 auto;
+  overflow-x: hidden;
 
   @media (max-width: 900px) {
     width: 90%;
   }
 `;
 
-export { StyledWrapper, StyledMain };
+const FooterWrapper = styled.div`
+  margin-top: 64px;
+  grid-row: 3;
+`;
+
+export { StyledWrapper, StyledMain, FooterWrapper };

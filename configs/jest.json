@@ -4,8 +4,7 @@
   "coverageDirectory": "<rootDir>/tests/__coverage__/",
   "roots": ["<rootDir>/src/", "<rootDir>/tests/"],
   "moduleNameMapper": {
-    "\\.(jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/tests/mocks/files/*.js",
-     "^.+\\.svg$": "jest-svg-transformer",
+     "\\.svg": "<rootDir>/tests/__mocks__/svg.js",
     "\\.(css|scss|less)$": "identity-obj-proxy",
     "^uuid$": "<rootDir>/node_modules/uuid/dist/index.js"
   },

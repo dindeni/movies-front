@@ -1,16 +1,15 @@
 import { useState, useEffect } from 'react';
 
-import { MOBILE_BREAKPOINT } from '../constants/breakpoints';
 import { debounce } from '../helpers/debounce';
 
 const useViewport = () => {
   const [width, setWidth] = useState(0);
-  const [isMobileWidth, setIsMobileWidth] = useState(false);
+  const [height, setHeight] = useState(0);
 
   useEffect(() => {
     const handleWindowResize = () => {
       setWidth(window.innerWidth);
-      setIsMobileWidth(window.innerWidth < MOBILE_BREAKPOINT);
+      setHeight(window.innerHeight);
     };
     const debouncedHandleWindowResize = debounce(handleWindowResize, 200);
     handleWindowResize();
@@ -18,7 +17,7 @@ const useViewport = () => {
     return () => window.removeEventListener('resize', debouncedHandleWindowResize);
   }, []);
 
-  return { width, isMobileWidth };
+  return { width, height };
 };
 
 export { useViewport };

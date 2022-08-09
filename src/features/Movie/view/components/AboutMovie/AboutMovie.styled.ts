@@ -29,14 +29,13 @@ const TextItem = styled.div`
 const CompaniesList = styled.ul`
   margin: 0;
   padding: 10px;
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-items: center;
-  grid-template-columns: repeat(3, auto);
-  column-gap: 16px;
+  gap: 16px;
   background: ${({ theme: { colors } }) => colors.gold};
   border-radius: 12px;
-  width: max-content;
+  width: 100%;
 `;
 
 const CompanyItem = styled.li`

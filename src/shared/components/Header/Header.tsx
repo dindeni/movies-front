@@ -1,12 +1,12 @@
 import { FC, useState, PointerEvent } from 'react';
+
 import { useViewport } from 'shared/hooks/useViewport';
 
+import { Logo } from '../Logo';
 import { ButtonHamburger } from './ButtonHamburger';
 import { menuData } from './data';
 import {
   StyledHeader,
-  LogoText,
-  LogoLink,
   StyledList,
   StyledItem,
   StyledNav,
@@ -67,9 +67,7 @@ const Header: FC<Props> = ({ logoText }) => {
 
   return (
     <StyledHeader>
-      <LogoText>
-        <LogoLink to="/">{logoText}</LogoLink>
-      </LogoText>
+      <Logo text={logoText} />
       <StyledNav onPointerLeave={handleStyledNavPointerLeave}>
         <StyledList>{width > MOBILE_BREAKPOINT && menu}</StyledList>
         <MobileMenu isOpen={isMenuOpen}>
