@@ -11,7 +11,7 @@ const StyledWrapper = styled.div<{ height: number }>`
 const StyledMain = styled.main`
   width: 70%;
   margin: 0 auto;
-  overflow-x: hidden;
+  overflow: hidden;
 
   @media (max-width: 900px) {
     width: 90%;

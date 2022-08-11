@@ -88,16 +88,16 @@ describe('Movie description', () => {
     const image = await findByAltText('poster movie - Lightyear');
     await dispatchResize();
     fireEvent.pointerEnter(image);
-    await new Promise((r) => setTimeout(r, 1000));
+    await new Promise((value) => setTimeout(value, 1000));
     expect(image.style.transform).toBe('scale(1.2, 1.2) ');
     fireEvent.pointerLeave(image);
     await new Promise((r) => setTimeout(r, 1000));
     expect(image.style.transform).not.toBe('scale(1.2, 1.2) ');
     fireEvent.click(image);
-    await new Promise((r) => setTimeout(r, 1000));
+    await new Promise((value) => setTimeout(value, 1000));
     expect(image.style.transform).toBe('scale(1.2, 1.2) ');
     fireEvent.click(image);
-    await new Promise((r) => setTimeout(r, 1000));
+    await new Promise((value) => setTimeout(value, 1000));
     expect(image.style.transform).not.toBe('scale(1.2, 1.2) ');
   });
 

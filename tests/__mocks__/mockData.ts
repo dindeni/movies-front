@@ -1,5 +1,5 @@
 const dailyTopSlides = {
-  page: 50,
+  page: 1,
   results: [
     {
       adult: false,
@@ -71,7 +71,7 @@ const dailyTopSlides = {
     },
   ],
   total_pages: 10,
-  total_results: 10,
+  total_results: 10000,
 };
 
 const movieDescription = {

@@ -14,4 +14,3 @@ const LogoLink = styled(Link)`
 `;
 
 export { LogoText, LogoLink };
-

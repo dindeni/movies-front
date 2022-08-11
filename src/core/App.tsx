@@ -4,7 +4,7 @@ import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from 'styles/global';
 import { theme } from 'styles/theme';
 
-import { Home, Movie, NotFound } from '../pages';
+import { Home, Movie, NotFound, TopMoviesPage } from '../pages';
 
 const App = () => (
   <ThemeProvider theme={theme}>
@@ -14,6 +14,8 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/movie/:id" element={<Movie />} />
+          <Route path="/trending/daily" element={<TopMoviesPage movieKind="day" />} />
+          <Route path="/trending/weekly" element={<TopMoviesPage movieKind="week" />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

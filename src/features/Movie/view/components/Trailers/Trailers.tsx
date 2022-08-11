@@ -56,7 +56,6 @@ const Trailers: FC<Props> = ({ trailers, isTablet }) => {
   const handleSlideChange = (event: SwiperCore) => {
     setCurrentSlide(event.activeIndex);
   };
-  console.log(currentSlide, videoSlides.length, swiper);
 
   return (
     <>

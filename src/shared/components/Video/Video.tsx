@@ -4,7 +4,6 @@ import { Props } from './types';
 import { StyledWrapper, StyledIframe } from './Video.styled';
 
 const Video: FC<Props> = ({ id, onLoaded }) => {
-
   return (
     <StyledWrapper>
       <StyledIframe

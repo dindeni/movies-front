@@ -8,12 +8,12 @@ const menuData: MenuData = [
       {
         name: 'Daily',
         value: 'dailyTrending',
-        link: 'daily-trending',
+        link: '/trending/daily',
       },
       {
         name: 'Weekly',
         value: 'weeklyTrending',
-        link: 'weekly-trending',
+        link: '/trending/weekly',
       },
     ],
   },

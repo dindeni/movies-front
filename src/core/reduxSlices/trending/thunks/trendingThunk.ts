@@ -19,6 +19,6 @@ const getTrendingResult: AsyncThunkPayloadCreator<
   }
 };
 
-const getDailyTrending = createAsyncThunk('/getDailyTrending', getTrendingResult);
+const getTrending = createAsyncThunk('/getDailyTrending', getTrendingResult);
 
-export { getDailyTrending };
+export { getTrending };

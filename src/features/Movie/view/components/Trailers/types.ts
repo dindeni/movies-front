@@ -19,4 +19,3 @@ interface VideoPopupProps {
 }
 
 export type { Props, SlideProps, VideoPopupProps };
-

@@ -23,7 +23,9 @@ const Slider: FC<Props> = ({ slides = [], preventOnLoadImage }) => {
 
   return (
     <StyledWrapper>
-      <Swiper slidesPerView={3} spaceBetween={20}>{slidesElements}</Swiper>
+      <Swiper slidesPerView={3} spaceBetween={20}>
+        {slidesElements}
+      </Swiper>
     </StyledWrapper>
   );
 };

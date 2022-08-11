@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { TrendingItemPayload } from 'shared/types/redux';
 
 import { initialState } from './constants';
-import { getDailyTrending } from './thunks';
+import { getTrending } from './thunks';
 import { Meta, State } from './types';
 
 const { reducer: trendingReducer } = createSlice({
@@ -12,11 +12,17 @@ const { reducer: trendingReducer } = createSlice({
   reducers: {},
 
   extraReducers: {
-    [getDailyTrending.pending.type]: (state: State) => {
-      state.dailyStatus = 'start';
+    [getTrending.pending.type]: (state: State, { meta }: { meta: Meta }) => {
+      if (meta.arg.timePeriod === 'day') {
+        state.dailyStatus = 'start';
+        state.dailyData = initialState.dailyData;
+      } else {
+        state.weeklyStatus = 'start';
+        state.weeklyData = initialState.weeklyData;
+      }
     },
 
-    [getDailyTrending.fulfilled.type]: (
+    [getTrending.fulfilled.type]: (
       state: State,
       { payload, meta }: { payload: TrendingItemPayload; meta: Meta },
     ) => {
@@ -32,10 +38,15 @@ const { reducer: trendingReducer } = createSlice({
         state.weeklyStatus = 'success';
         state.weeklyData = serverData;
       }
+      state.page = meta.arg.page;
     },
 
-    [getDailyTrending.rejected.type]: (state: State) => {
-      state.dailyStatus = 'error';
+    [getTrending.rejected.type]: (state: State, { meta }: { meta: Meta }) => {
+      if (meta.arg.timePeriod === 'day') {
+        state.dailyStatus = 'error';
+      } else {
+        state.weeklyStatus = 'error';
+      }
     },
   },
 });

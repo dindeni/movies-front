@@ -5,6 +5,7 @@ interface State {
   dailyData: TrendingItem;
   weeklyStatus: Status;
   weeklyData: TrendingItem;
+  page: number;
 }
 
 interface Meta {
