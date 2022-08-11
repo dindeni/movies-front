@@ -1,19 +1,15 @@
-import { findAllByRole, getAllByRole, waitFor } from '@testing-library/dom';
-import { fireEvent } from '@testing-library/react';
+import { findAllByRole, waitFor } from '@testing-library/dom';
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
 import { MemoryRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import '@testing-library/jest-dom/extend-expect';
-import { act } from 'react-dom/test-utils';
 
 import { TopMovies } from 'features/TopMovies/view/containers/TopMovies';
 import { theme } from 'styles/theme';
 
 import { dailyTopSlides } from './__mocks__/mockData';
 import { renderWithProviders } from './utils/redux';
-import { changeViewport, dispatchResize } from './utils/viewport';
-import { Mock } from 'jest-mock';
 
 const successHandler = [
   rest.get(`https://api.themoviedb.org/3/trending/movie/day`, (req, res, ctx) => {
