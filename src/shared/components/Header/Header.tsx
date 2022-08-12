@@ -44,6 +44,10 @@ const Header: FC<Props> = ({ logoText }) => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const handleLinkClick = () => {
+    setIsMenuOpen(false);
+  };
+
   const menu = menuData.map(({ name, value, subItems }) => {
     return (
       <StyledItem
@@ -55,7 +59,7 @@ const Header: FC<Props> = ({ logoText }) => {
         {((subItems && hoveredItem === value) || width < MOBILE_BREAKPOINT) && (
           <SubLinksWrapper>
             {subItems.map(({ name: subItemName, value: subItemValue, link }) => (
-              <StyledSubLink key={subItemValue} to={link}>
+              <StyledSubLink key={subItemValue} to={link} onClick={handleLinkClick}>
                 {subItemName}
               </StyledSubLink>
             ))}

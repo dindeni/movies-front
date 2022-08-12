@@ -6,6 +6,15 @@ const StyledWrapper = styled.div<{ height: number }>`
   min-height: ${({ height }) => (height ? `${height}px` : '100vh')};
   display: grid;
   grid-template-rows: auto 1fr auto;
+  padding-top: 100px;
+`;
+
+const HeaderWrapper = styled.div`
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: ${({ theme: { colors } }) => colors.black};
+  z-index: 100;
 `;
 
 const StyledMain = styled.main`
@@ -23,4 +32,4 @@ const FooterWrapper = styled.div`
   grid-row: 3;
 `;
 
-export { StyledWrapper, StyledMain, FooterWrapper };
+export { StyledWrapper, HeaderWrapper, StyledMain, FooterWrapper };

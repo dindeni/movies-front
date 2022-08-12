@@ -1,4 +1,6 @@
+import { waitFor } from '@testing-library/dom';
 import { render, fireEvent } from '@testing-library/react';
+import { act } from 'react-dom/test-utils';
 import { MemoryRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 
@@ -35,14 +37,26 @@ describe('Header', () => {
     const menuItem = container.querySelector('li');
     fireEvent.pointerEnter(menuItem);
     expect(container.querySelector('li a')).toBeTruthy();
+    const nav = container.querySelector('nav');
+    fireEvent.pointerLeave(nav);
+    expect(container.querySelector('li a')).toBeFalsy();
+    fireEvent.pointerEnter(menuItem);
     fireEvent.pointerLeave(menuItem);
     expect(container.querySelector('li a')).toBeFalsy();
   });
 
-  it('should when the button is clicked the menu opens', () => {
-    changeViewport(425);
-    const buttonElement = container.querySelector('[aria-label=close]');
-    fireEvent.click(buttonElement);
+  it('should when the button is clicked the menu opens', async () => {
+    await changeViewport(425);
+    const buttonHamburger = container.querySelector('[aria-label=close]');
+    fireEvent.click(buttonHamburger);
     expect(container.querySelector('[aria-label=open]')).toBeTruthy();
+    await act(async () => {
+      await new Promise((r) => setTimeout(r, 500));
+    });
+    const link = getByText('Daily');
+    fireEvent.click(link);
+    await waitFor(() =>
+      expect(container.querySelector('[aria-label=close]')).toBeTruthy(),
+    );
   });
 });

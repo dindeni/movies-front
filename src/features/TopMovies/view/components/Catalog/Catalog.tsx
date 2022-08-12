@@ -29,7 +29,6 @@ const Catalog: FC<Props> = ({ movies, onIntersected, isLoaded, header }) => {
       )),
     [movies],
   );
-  console.log('kk', isUpdating, movies);
 
   const observeLoaderWrapper = useCallback(
     (entries: IntersectionObserverEntry[]) => {
