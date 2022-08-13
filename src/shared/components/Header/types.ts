@@ -1,5 +1,6 @@
 interface Props {
   logoText: string;
+  onMobileMenuChange: (isOpen: boolean) => void;
 }
 
 interface MenuItem {

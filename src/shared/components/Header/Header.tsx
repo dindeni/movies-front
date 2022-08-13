@@ -1,4 +1,4 @@
-import { FC, useState, PointerEvent } from 'react';
+import { FC, useState, PointerEvent, useEffect } from 'react';
 
 import { useViewport } from 'shared/hooks/useViewport';
 
@@ -18,10 +18,14 @@ import { Props } from './types';
 
 const MOBILE_BREAKPOINT = 450;
 
-const Header: FC<Props> = ({ logoText }) => {
+const Header: FC<Props> = ({ logoText, onMobileMenuChange }) => {
   const [hoveredItem, setHoveredItem] = useState('');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { width } = useViewport();
+
+  useEffect(() => {
+    onMobileMenuChange(isMenuOpen);
+  }, [isMenuOpen]);
 
   const handleStyledItemPointerEnter = (event: PointerEvent, value: string) => {
     setHoveredItem(value);

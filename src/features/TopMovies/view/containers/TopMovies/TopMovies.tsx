@@ -11,7 +11,7 @@ import { Catalog } from '../../components/Catalog';
 import { Movie } from '../../components/Catalog/types';
 import { Props } from './types';
 
-const MOBILE_IMAGE_WIDTH = 200;
+const MOBILE_IMAGE_WIDTH = 300;
 const DESKTOP_IMAGE_WIDTH = 500;
 
 const TopMovies: FC<Props> = ({ movieKind }) => {

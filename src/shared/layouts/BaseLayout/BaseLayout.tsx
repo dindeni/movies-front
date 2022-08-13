@@ -1,5 +1,5 @@
 import { gsap } from 'gsap';
-import { FC, useEffect, useRef } from 'react';
+import { FC, useEffect, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
 
 import { Footer } from 'shared/components/Footer';
@@ -19,6 +19,7 @@ const BaseLayout: FC<Props> = ({ children }) => {
   const { height } = useViewport();
   const lastScroll = useRef(0);
   const headerWrapperRef = useRef<HTMLDivElement>(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleDocumentScroll = () => {
     const currentScroll = window.scrollY;
@@ -39,6 +40,11 @@ const BaseLayout: FC<Props> = ({ children }) => {
     };
   }, []);
 
+  const handleMenuChange = (isOpen: boolean) => {
+    setIsMenuOpen(isOpen);
+  };
+  console.log(isMenuOpen)
+
   return (
     <StyledWrapper height={height}>
       <Helmet>
@@ -47,8 +53,8 @@ const BaseLayout: FC<Props> = ({ children }) => {
       </Helmet>
       {height && (
         <>
-          <HeaderWrapper ref={headerWrapperRef}>
-            <Header logoText="Movies" />
+          <HeaderWrapper ref={headerWrapperRef} isMenuOpen={isMenuOpen}>
+            <Header logoText="Movies" onMobileMenuChange={handleMenuChange} />
           </HeaderWrapper>
           <StyledMain>{children}</StyledMain>
           <FooterWrapper>

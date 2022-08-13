@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const StyledWrapper = styled.div<{ height: number }>`
   background: ${({ theme: { colors } }) => colors.black};
@@ -9,12 +9,19 @@ const StyledWrapper = styled.div<{ height: number }>`
   padding-top: 100px;
 `;
 
-const HeaderWrapper = styled.div`
+const HeaderWrapper = styled.div<{ isMenuOpen: boolean }>`
   position: fixed;
   top: 0;
   width: 100%;
   background: ${({ theme: { colors } }) => colors.black};
   z-index: 100;
+  ${({ isMenuOpen }) => {
+    if (isMenuOpen) {
+      return css`
+        height: 100%;
+      `;
+    }
+  }}
 `;
 
 const StyledMain = styled.main`
