@@ -189,4 +189,88 @@ const trailers = {
   ],
 };
 
-export { dailyTopSlides, movieDescription, trailers };
+const searchMock = {
+  page: 1,
+  results: [
+    {
+      adult: false,
+      backdrop_path: '/xAC9kXLxUHpdCkISgYcLzYrxIQR.jpg',
+      genre_ids: [53, 27],
+      id: 84348,
+      original_language: 'en',
+      original_title: 'V/H/S',
+      overview:
+        'When a group of misfits is hired by an unknown third party to burglarize a desolate house and acquire one rare' +
+        ' VHS tape, they discover more found footage than they had bargained for.',
+      popularity: 22.647,
+      poster_path: '/xVGfCaTwVdZt3lFqtOVhTDqmG58.jpg',
+      release_date: '2012-07-28',
+      title: 'V/H/S',
+      video: false,
+      vote_average: 6.1,
+      vote_count: 1190,
+    },
+    {
+      adult: false,
+      backdrop_path: '/aELgHEHFGDCcGslMoyg9KGiDV4v.jpg',
+      genre_ids: [27, 53],
+      id: 159117,
+      original_language: 'en',
+      original_title: 'V/H/S/2',
+      overview:
+        'Inside a darkened house looms a column of TVs littered with VHS tapes, a pagan shrine to forgotten analog gods.' +
+        ' The screens crackle and pop endlessly with monochrome vistas of static white noise permeating the brain and' +
+        ' fogging concentration. But you must fight the urge to relax: this is no mere movie night. Those obsolete spools' +
+        ' contain more than just magnetic tape. They are imprinted with the very soul of evil.',
+      popularity: 27.287,
+      poster_path: '/o4hcWsHaHaNQ9BBReOxLvYJNRhA.jpg',
+      release_date: '2013-06-06',
+      title: 'V/H/S/2',
+      video: false,
+      vote_average: 6.3,
+      vote_count: 813,
+    },
+    {
+      adult: false,
+      backdrop_path: '/uWbP41poWgP0f7sgAQTf6UeRtwg.jpg',
+      genre_ids: [27],
+      id: 753453,
+      original_language: 'en',
+      original_title: 'V/H/S/94',
+      overview:
+        'A mysterious VHS tape leads a police S.W.A.T. team to the discovery of a sinister cult whose collection of' +
+        ' pre-recorded material reveals a nightmarish conspiracy.',
+      popularity: 23.438,
+      poster_path: '/9fSogEkqDfJQTuGHsTFloQz3Tw8.jpg',
+      release_date: '2021-09-26',
+      title: 'V/H/S/94',
+      video: false,
+      vote_average: 6.3,
+      vote_count: 254,
+    },
+    {
+      adult: false,
+      backdrop_path: '/td9f8E6W8Z2HnmmU69tT7ZHwK5F.jpg',
+      genre_ids: [80, 53, 35, 9648],
+      id: 27004,
+      original_language: 'en',
+      original_title: 'Ca$h',
+      overview:
+        'A stroke of good luck turns lethal for Sam Phelan and his wife Leslie when they are faced with a life-changing' +
+        ' decision that brings strange and sinister Pyke Kubic to their doorstep. As Pyke leads Sam and Leslie on a tumultuous' +
+        ' adventure through the streets of Chicago, each are pulled deeper and deeper into a desperate spiral of deception' +
+        ' and violence – all in the name of money.',
+      popularity: 10.3,
+      poster_path: '/nEeeKsfN1hr98aCmL16LVOckawC.jpg',
+      release_date: '2010-01-01',
+      title: 'Ca$h',
+      video: false,
+      vote_average: 5.9,
+      vote_count: 192,
+    },
+  ],
+  total_pages: 25,
+  total_results: 499,
+};
+
+export { dailyTopSlides, movieDescription, trailers, searchMock };

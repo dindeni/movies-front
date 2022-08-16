@@ -3,11 +3,13 @@ import { useDispatch, useSelector, TypedUseSelectorHook } from 'react-redux';
 
 import { movieReducer } from 'features/Movie/redux/reducer';
 
+import { searchReducer } from '../reduxSlices/search/reducer';
 import { trendingReducer } from '../reduxSlices/trending/reducer';
 
 const rootReducer = combineReducers({
   trending: trendingReducer,
   movie: movieReducer,
+  search: searchReducer,
 });
 
 const setupStore = (preloadedState?: PreloadedState<RootState>) => {

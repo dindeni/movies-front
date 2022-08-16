@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet';
 
 import { Footer } from 'shared/components/Footer';
 import { Header } from 'shared/components/Header';
+import { SearchContainer } from 'shared/containers/SearchContainer';
 import { debounce } from 'shared/helpers/debounce';
 import { useViewport } from 'shared/hooks/useViewport';
 
@@ -56,7 +57,10 @@ const BaseLayout: FC<Props> = ({ children }) => {
           <HeaderWrapper ref={headerWrapperRef} isMenuOpen={isMenuOpen}>
             <Header logoText="Movies" onMobileMenuChange={handleMenuChange} />
           </HeaderWrapper>
-          <StyledMain>{children}</StyledMain>
+          <StyledMain>
+            <SearchContainer />
+            {children}
+          </StyledMain>
           <FooterWrapper>
             <Footer logoText="Movies" />
           </FooterWrapper>

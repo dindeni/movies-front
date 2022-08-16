@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import IconClose from '/static/icons/icon-close.svg';
+import IconClose from '/static/icons/icon-close-rounded.svg';
 
 const StyledWrapper = styled.div<{ isLoaded: boolean }>`
   position: fixed;

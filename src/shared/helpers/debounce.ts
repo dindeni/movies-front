@@ -1,10 +1,12 @@
-const debounce = (callback: () => void, delay: number) => {
+const debounce = <T>(callback: (...arg: T[]) => void, delay: number) => {
   let timeout: ReturnType<typeof setTimeout>;
-  return () => {
+  return (...arg) => {
     if (timeout) {
       clearTimeout(timeout);
     }
-    timeout = setTimeout(callback, delay);
+    timeout = setTimeout(() => {
+      callback(...arg);
+    }, delay);
   };
 };
 

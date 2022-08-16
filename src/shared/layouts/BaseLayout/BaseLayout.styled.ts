@@ -27,7 +27,7 @@ const HeaderWrapper = styled.div<{ isMenuOpen: boolean }>`
 const StyledMain = styled.main`
   width: 70%;
   margin: 0 auto;
-  overflow: hidden;
+  overflow-x: hidden;
 
   @media (max-width: 900px) {
     width: 90%;
