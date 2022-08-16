@@ -18,6 +18,9 @@
   },
   "plugins": ["@typescript-eslint", "react", "prettier", "import", "jest-dom"],
   "settings": {
+    "react": {
+      "version": "detect"
+    },
     "import/resolver": {
       "node": {
         "extensions": [".js", ".jsx", ".ts", ".tsx", ".css"]

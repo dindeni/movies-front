@@ -1,18 +1,18 @@
 type Status = 'start' | 'error' | 'success' | 'idle';
 
 interface TrendingItemPayload {
-  results: TrendingResults[];
+  results: MovieResult[];
   total_pages: number;
   total_results: number;
 }
 
 interface TrendingItem {
-  results: TrendingResults[];
+  results: MovieResult[];
   totalPages: number;
   totalResults: number;
 }
 
-interface TrendingResults {
+interface MovieResult {
   adult: boolean;
   backdrop_path: string;
   id: number;
@@ -90,6 +90,7 @@ export type {
   Status,
   TrendingItem,
   TrendingItemPayload,
+  MovieResult,
   MovieDescription,
   ProductionCompany,
   Genre,

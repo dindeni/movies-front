@@ -57,7 +57,7 @@ const AboutMovie: FC<Props> = ({
           Go to movie homepage
         </StyledLink>
       )}
-      <CompaniesList>{companies}</CompaniesList>
+      {productionCompanies.length > 0 && <CompaniesList>{companies}</CompaniesList>}
     </StyledWrapper>
   );
 };

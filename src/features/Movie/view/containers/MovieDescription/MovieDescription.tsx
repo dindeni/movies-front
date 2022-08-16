@@ -18,7 +18,7 @@ const MovieDescription: FC = () => {
     if (id) {
       dispatch(getMovieDescription({ id: parseInt(id) }));
     }
-  }, []);
+  }, [id]);
 
   const getGenresFromArray = (genres?: Genre[]) => {
     return genres?.map(({ name }) => name.toLowerCase()).join(', ') || '';
