@@ -17,7 +17,7 @@ describe('Header', () => {
     const component = render(
       <ThemeProvider theme={theme}>
         <MemoryRouter>
-          <Header logoText="logoText" />
+          <Header logoText="logoText" onMobileMenuChange={() => ({})} />
         </MemoryRouter>
       </ThemeProvider>,
     );

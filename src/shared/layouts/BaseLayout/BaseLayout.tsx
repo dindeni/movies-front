@@ -44,7 +44,6 @@ const BaseLayout: FC<Props> = ({ children }) => {
   const handleMenuChange = (isOpen: boolean) => {
     setIsMenuOpen(isOpen);
   };
-  console.log(isMenuOpen)
 
   return (
     <StyledWrapper height={height}>
