@@ -1,7 +1,7 @@
 # Movies portal frontend
 
 ### Commands
-`npm run dev` Build production version to `/build`
+`npm run build` Build production version to `/build`
 
 `npm run dev` Build app and serve on `http://localhost:3000`
 

@@ -10,7 +10,7 @@ module.exports = merge(commonConfig, {
     historyApiFallback: true,
     port: 3000,
     static: {
-      directory: path.join(__dirname, 'public'),
+      directory: path.resolve(__dirname, '../../public'),
     },
   },
   devtool: 'cheap-module-source-map',

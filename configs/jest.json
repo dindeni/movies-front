@@ -4,8 +4,8 @@
   "coverageDirectory": "<rootDir>/tests/__coverage__/",
   "roots": ["<rootDir>/src/", "<rootDir>/tests/"],
   "moduleNameMapper": {
-     "\\.svg": "<rootDir>/tests/__mocks__/svg.js",
-    "\\.(css|scss|less)$": "identity-obj-proxy",
+    "\\.svg": "<rootDir>/tests/__mocks__/svg.js",
+    "\\.(css|scss|less|png|ico)$": "identity-obj-proxy",
     "^uuid$": "<rootDir>/node_modules/uuid/dist/index.js"
   },
   "moduleFileExtensions": ["ts", "tsx", "js", "jsx"],

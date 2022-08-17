@@ -50,6 +50,15 @@ const BaseLayout: FC<Props> = ({ children }) => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>Movies</title>
+        <link rel="icon" type="image/png" href="/favicons/favicon.ico" sizes="16x16" />
+        <link rel="icon" type="image/png" href="/favicons/favicon-32.png" sizes="32x32" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/favicons/apple-touch-icon.png"
+        />
+        <link rel="icon" sizes="192x192" href="/favicons/android-192.png" />
+        <link rel="icon" sizes="512x512" href="/favicons/android-512.png" />
       </Helmet>
       {height && (
         <>
