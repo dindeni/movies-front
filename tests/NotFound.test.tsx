@@ -13,7 +13,7 @@ describe('NotFound', () => {
   const component = (
     <ThemeProvider theme={theme}>
       <MemoryRouter>
-        <NotFound />
+        <NotFound disableAccessibilityPopup />
       </MemoryRouter>
     </ThemeProvider>
   );

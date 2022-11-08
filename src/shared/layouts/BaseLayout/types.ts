@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 
 interface Props {
+  disableAccessibilityPopup?: boolean;
   children?: ReactNode;
 }
 

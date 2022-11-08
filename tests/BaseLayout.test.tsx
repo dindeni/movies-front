@@ -13,7 +13,7 @@ import { dispatchResize } from './utils/viewport';
 const component = (
   <ThemeProvider theme={theme}>
     <MemoryRouter>
-      <BaseLayout>some content</BaseLayout>
+      <BaseLayout disableAccessibilityPopup>some content</BaseLayout>
     </MemoryRouter>
   </ThemeProvider>
 );

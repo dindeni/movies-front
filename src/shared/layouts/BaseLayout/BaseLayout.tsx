@@ -1,7 +1,10 @@
 import { gsap } from 'gsap';
-import { FC, useEffect, useRef, useState } from 'react';
+import { FC, useEffect, useRef, useState, useMemo } from 'react';
 import { Helmet } from 'react-helmet';
 
+import { checkAPIAvailability } from 'core/reduxSlices/global/thunks';
+import { useAppDispatch, useAppSelector } from 'core/store';
+import { AccessibilityPopup } from 'shared/components/AccessibilityPopup';
 import { Footer } from 'shared/components/Footer';
 import { Header } from 'shared/components/Header';
 import { SearchContainer } from 'shared/containers/SearchContainer';
@@ -16,11 +19,14 @@ import {
 } from './BaseLayout.styled';
 import { Props } from './types';
 
-const BaseLayout: FC<Props> = ({ children }) => {
+const BaseLayout: FC<Props> = ({ disableAccessibilityPopup, children }) => {
+  const dispatch = useAppDispatch();
   const { height } = useViewport();
   const lastScroll = useRef(0);
   const headerWrapperRef = useRef<HTMLDivElement>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const { isApiAvailable, availabilityStatus } = useAppSelector((state) => state.global);
 
   const handleDocumentScroll = () => {
     const currentScroll = window.scrollY;
@@ -36,10 +42,40 @@ const BaseLayout: FC<Props> = ({ children }) => {
     const debouncedHandleDocumentScroll = debounce(handleDocumentScroll, 300);
     window.addEventListener('scroll', debouncedHandleDocumentScroll);
 
+    const handleLocalstorageUnload = () => localStorage.removeItem('apiAvailability');
+    window.addEventListener('unload', handleLocalstorageUnload);
+
+    if (!localStorage.getItem('apiAvailability')) dispatch(checkAPIAvailability());
+
     return () => {
       window.removeEventListener('scroll', debouncedHandleDocumentScroll);
+      window.removeEventListener('unload', handleLocalstorageUnload);
     };
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem(
+      'apiAvailability',
+      `${isApiAvailable ? 'available' : 'not available'}`,
+    );
+  }, [isApiAvailable]);
+
+  const mainContent = useMemo(
+    () => (
+      <>
+        <SearchContainer />
+        {children}
+      </>
+    ),
+    [children],
+  );
+
+  const isMainContentShown = useMemo(() => {
+    return (
+      !disableAccessibilityPopup &&
+      (availabilityStatus === 'success' || availabilityStatus === 'error')
+    );
+  }, [availabilityStatus, disableAccessibilityPopup]);
 
   const handleMenuChange = (isOpen: boolean) => {
     setIsMenuOpen(isOpen);
@@ -66,8 +102,10 @@ const BaseLayout: FC<Props> = ({ children }) => {
             <Header logoText="Movies" onMobileMenuChange={handleMenuChange} />
           </HeaderWrapper>
           <StyledMain>
-            <SearchContainer />
-            {children}
+            {isMainContentShown && (
+              <>{isApiAvailable ? mainContent : <AccessibilityPopup />}</>
+            )}
+            {disableAccessibilityPopup && mainContent}
           </StyledMain>
           <FooterWrapper>
             <Footer logoText="Movies" />

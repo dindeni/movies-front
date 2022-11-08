@@ -1,5 +1,5 @@
 {
-  "name": "Movies portal",
+  "name": "movies-portal",
   "version": "1.0.0",
   "description": "Movies portal",
   "author": "Dmitrij Lagutin",
@@ -46,7 +46,7 @@
     "fork-ts-checker-webpack-plugin": "^7.2.11",
     "html-webpack-plugin": "^5.5.0",
     "identity-obj-proxy": "^3.0.0",
-    "image-webpack-loader": "^8.1.0",
+    "image-webpack-loader": "^4.2.0",
     "jest": "^28.1.1",
     "jest-environment-jsdom": "^28.1.1",
     "jest-styled-components": "^7.0.8",
